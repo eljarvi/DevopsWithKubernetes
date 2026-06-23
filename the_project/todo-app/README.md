@@ -4,4 +4,4 @@
 
 docker build -t todo-app .
 
-docker run -e PORT=<PORT> -p <HOST-PORT>:<CONTAINER-PORT> todo-app
+docker run -e PORT="PORT" -p "HOSTPORT":"CONTAINER-PORT" todo-app

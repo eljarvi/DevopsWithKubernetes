@@ -9,7 +9,8 @@ Run the container:
 docker run log-output
 
 ### How to run in Kubernetes
+kubectl apply -f manifests/deployment.yaml
 
-kubectl create deployment log-output --image=elleniini/log-output:1.1
 kubectl get pods
-kubectl logs <pod-name>
+
+kubectl logs PODNAME
