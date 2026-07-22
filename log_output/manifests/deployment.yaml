@@ -14,15 +14,16 @@ spec:
     spec:
       volumes:
         - name: shared
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: shared-pvc
       containers:
         - name: log-output-reader
-          image: elleniini/log-output-reader:1.10
+          image: elleniini/log-output-reader:1.11
           volumeMounts:
             - name: shared
               mountPath: /shared
         - name: log-output-writer
-          image: elleniini/log-output-writer:1.10
+          image: elleniini/log-output-writer:1.11
           volumeMounts:
             - name: shared
               mountPath: /shared

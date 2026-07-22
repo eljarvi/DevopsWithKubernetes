@@ -8,7 +8,7 @@ setInterval(() => {
     const timestamp = new Date().toISOString();
     const line = `${timestamp}: ${randomString}\n`;
 
-    fs.appendFileSync(file, line);
+    fs.writeFileSync(file, line);
 
     console.log(line.trim());
 }, 5000);

@@ -12,6 +12,13 @@ spec:
       labels:
         app: ping-pong
     spec:
+      volumes:
+        - name: shared
+          persistentVolumeClaim:
+            claimName: shared-pvc
       containers:
         - name: ping-pong
-          image: elleniini/ping-pong:1.9
+          image: elleniini/ping-pong:1.11
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
